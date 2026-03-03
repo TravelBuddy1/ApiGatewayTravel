@@ -25,6 +25,14 @@ public class ApiGatewayTravelApplication {
                         .path("/accommodation/**")
                         .uri("lb://accommodation-service"))
 
+                .route("activities-route", r -> r
+                        .path("/activities/**")
+                        .uri("lb://activity-service"))
+
+                .route("reservation", r -> r
+                        .path("/reservations/**")
+                        .uri("lb://RESERVATION-DJANGO"))
+
                 .route("user-route", r -> r
                         .path("/users/**")
                         .uri("lb://user"))
